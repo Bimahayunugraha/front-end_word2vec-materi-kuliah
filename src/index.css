@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.w2v-all-files {
+  @apply h-full;
+}
+
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
+textarea {
+  width: 100%;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: 0px solid transparent;
+  resize: none;
+}
+
+.nav-container.active {
+  @apply fixed z-[50] bg-white bg-opacity-90;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.drop-zone {
+  @apply flex cursor-pointer flex-col items-center justify-center rounded-lg bg-secondary-soft-red py-10 px-4 shadow-7 outline-none;
+}
+
+.converter-wrapper {
+  background-color: #3c3c3c;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.06) 25%, transparent 0),
+    linear-gradient(-45deg, rgba(0, 0, 0, 0.06) 25%, transparent 0),
+    linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.06) 0),
+    linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.06) 0);
+  background-size: 24px 24px;
+  background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+}
+
+.convert-form {
+  background: linear-gradient(180deg, #565656 0, #434343);
+  box-shadow: 0 0 44px 2px rgb(0 0 0 / 7%), 0 20px 18px -8px rgb(0 0 0 / 10%);
+}
+
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-size: 0 10px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s ease-in-out;
+}
+
+.link-underline-blue {
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#bfdbfe, #bfdbfe);
+}
+
+.link-effect:hover .link-underline,
+.link-underline:hover {
+  background-size: 100% 10px;
+  background-position: 0 100%;
+}
+
+.react-calendar {
+  @apply w-[300px] max-w-full bg-white leading-tight md:w-[350px];
+}
+.react-calendar--doubleView {
+  @apply w-[700px];
+}
+.react-calendar--doubleView .react-calendar__viewContainer {
+  @apply m-[-0.5em] flex items-center justify-center;
+}
+.react-calendar--doubleView .react-calendar__viewContainer > * {
+  @apply m-[0.5em] w-1/2;
+}
+.react-calendar,
+.react-calendar *,
+.react-calendar *:before,
+.react-calendar *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.react-calendar button {
+  @apply m-0 border-none outline-0;
+}
+.react-calendar button:enabled:hover {
+  @apply cursor-pointer;
+}
+.react-calendar__navigation {
+  @apply mb-[1em] flex h-11 border-b border-dark;
+}
+.react-calendar__navigation button {
+  @apply min-w-[44px] bg-none;
+}
+.react-calendar__navigation button:disabled {
+  @apply bg-[#f0f0f0];
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  @apply rounded-lg bg-[#e6e6e6];
+}
+
+.react-calendar__month-view__weekdays {
+  @apply text-center text-xs font-bold uppercase;
+}
+.react-calendar__month-view__weekdays__weekday {
+  @apply p-[0.5em] text-tertiary-2;
+}
+.react-calendar__month-view__weekNumbers .react-calendar__tile {
+  @apply flex items-center justify-center text-xs font-bold;
+}
+.react-calendar__month-view__days__day--weekend {
+  @apply text-[#d10000];
+}
+.react-calendar__month-view__days__day--neighboringMonth {
+  @apply text-neutral-40;
+}
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+  @apply py-[2em] px-[0.5em];
+}
+.react-calendar__tile {
+  @apply max-w-full bg-none py-[10px] px-[6.6667px] text-center font-semibold leading-4;
+}
+.react-calendar__tile:disabled {
+  @apply bg-[#f0f0f0];
+}
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  @apply rounded-lg bg-[#e6e6e6];
+}
+.react-calendar__tile--now {
+  @apply rounded-lg bg-primary-violet text-white;
+}
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  @apply rounded-lg bg-primary-violet text-white;
+}
+.react-calendar__tile--hasActive {
+  @apply bg-[#76baff];
+}
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  @apply bg-[#a9d4ff];
+}
+.react-calendar__tile--active {
+  @apply bg-[#006edc] text-white;
+}
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  @apply bg-[#1087ff];
+}
+.react-calendar--selectRange .react-calendar__tile--hover {
+  @apply bg-[#e6e6e6];
+}

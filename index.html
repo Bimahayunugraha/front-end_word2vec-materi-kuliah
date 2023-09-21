@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/ico" href="/icon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Word2vec Materi Kuliah</title>
+		<link
+			href="/src/assets/css/all.min.css"
+			rel="stylesheet"
+			type="text/css" />
+
+			<style>	
+				.spinner-container {
+					height: 100vh;
+					width: 100%;
+					background: white;
+					position: fixed;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					z-index: 9999;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					margin: 0 auto;
+					color: white;
+					overflow: hidden !important;
+				}
+	
+				@keyframes sk-scaleout {
+					0% {
+						-webkit-transform: scale(0);
+						transform: scale(0);
+					}
+					100% {
+						-webkit-transform: scale(1);
+						opacity: 0.5;
+						transform: scale(1);
+					}
+				}
+			</style>
+	</head>
+	<body>
+		<div id="spinner" class="spinner-container">
+					<img src="./src/assets/img/png/icon.png" height="100" width="100" />
+					<img src="./src/assets/img/svg/pre-loading.svg" height="50" width="50" />
+    </div>
+		<div id="root"></div>
+		<script type="module" src="/src/main.jsx"></script>
+	</body>
+</html>
